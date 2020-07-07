@@ -1,0 +1,39 @@
+
+
+
+<div class="jumbotron">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Login Form</h2>
+               
+                <form [formGroup]="RohanForm">
+                    <div class="form-group">
+                        <label>User Name</label>
+                        <input [class.is-invalid] = "RohanForm.controls.username.invalid && RohanForm.controls.username.touched" type="text" class="form-control"  formControlName="username">
+                         <small [class.d-none]="RohanForm.controls.username.valid || RohanForm.controls.username.untouched" class="text-danger">Username is required</small>
+
+                        
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input [class.is-invalid] ="RohanForm.controls.password.invalid && RohanForm.controls.password.touched" type="text" class="form-control"  formControlName="password">
+                         <small [class.d-none]="RohanForm.controls.password.valid || RohanForm.controls.password.untouched" class="text-danger">Password is required</small>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" (click)="submit()">Login</button>&nbsp;
+                    
+                        <button class="btn btn-danger">Cancel</button>
+                    </div>
+                    <small *ngIf="usernameError">Invalid username or password</small>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
